@@ -170,6 +170,16 @@
 .cb-slot-status { font-size: 11px; font-weight: 600; padding: 4px 8px; }
 .cb-slot-status.available { color: #22c55e; }
 .cb-slot-status.sold-out { color: #3A4155; }
+
+  /* TESTIMONIOS */
+  .cb-testimonios { padding: 64px 0; border-bottom: 1px solid #1E2330; }
+  .cb-test-grid-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+  .cb-test-grid-bottom { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; max-width: 66.66%; }
+  .cb-test-wrap { border: 1px solid #1E2330; background: #141720; border-top: 2px solid #F5620F; overflow: hidden; }
+  .cb-test-video { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; }
+  .cb-test-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  @media (max-width: 700px) { .cb-test-grid-top { grid-template-columns: 1fr 1fr; } .cb-test-grid-bottom { grid-template-columns: 1fr 1fr; max-width: 100%; } }
+  @media (max-width: 480px) { .cb-test-grid-top { grid-template-columns: 1fr; } .cb-test-grid-bottom { grid-template-columns: 1fr; max-width: 100%; } }
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -383,6 +393,46 @@
 
 <!-- SIGNAL -->
 <div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 350,16 365,4 380,28 395,4 410,28 425,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
+
+<!-- TESTIMONIOS -->
+<div class="cb-testimonios">
+  <div class="cb-container">
+    <span class="cb-phase">Testimonios</span>
+    <h2 class="cb-h2">Lo que dicen quienes<br>ya trabajaron con Neto.</h2>
+    <p class="cb-p">Profesionales de distintas industrias y países de LATAM que han tomado sus programas de formación.</p>
+
+    <div class="cb-test-grid-top">
+      <div class="cb-test-wrap">
+        <div class="cb-test-video">
+          <iframe src="https://www.youtube.com/embed/t-t7m8n-HeM" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="cb-test-wrap">
+        <div class="cb-test-video">
+          <iframe src="https://www.youtube.com/embed/kHK6MiTBghI" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="cb-test-wrap">
+        <div class="cb-test-video">
+          <iframe src="https://www.youtube.com/embed/-7Op1kP50MU" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-test-grid-bottom">
+      <div class="cb-test-wrap">
+        <div class="cb-test-video">
+          <iframe src="https://www.youtube.com/embed/57YVKgcWh8M" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="cb-test-wrap">
+        <div class="cb-test-video">
+          <iframe src="https://www.youtube.com/embed/CJjEKMc9SXU" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- DESEO -->
 <div class="cb-section" id="promesa">
