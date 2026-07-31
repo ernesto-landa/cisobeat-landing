@@ -1,4 +1,11 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CISObeat Fundamentos</title>
 <style>
+  html, body { margin: 0; padding: 0; background: #0D0F12; }
   .cb-wrap {
     font-family: 'Inter', sans-serif;
     background: #0D0F12;
@@ -8,31 +15,23 @@
     font-size: 18px;
     width: 100%;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
   }
-
   .cb-wrap * { box-sizing: border-box; }
   .cb-wrap a { color: inherit; text-decoration: none; }
-
   .cb-container { max-width: 800px; margin: 0 auto; padding: 0 32px; }
-
   .cb-nav { padding: 20px 0; border-bottom: 1px solid #1E2330; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 999; background: #0D0F12; }
   .cb-nav-links { display: flex; gap: 24px; align-items: center; }
   .cb-nav-link { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 500; color: #7A8599; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; }
   .cb-nav-link:hover { color: #F5620F; }
   .cb-nav-link.cta { color: #F5620F; border: 1px solid #F5620F; padding: 6px 14px; }
   .cb-nav-link.cta:hover { background: #F5620F; color: #fff; }
-  @media (max-width: 600px) { 
+  @media (max-width: 600px) {
   .cb-nav-links { display: none; flex-direction: column; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #0D0F12; z-index: 1000; justify-content: center; align-items: center; gap: 32px; }
   .cb-nav-links.open { display: flex; }
   .cb-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
   .cb-hamburger span { width: 24px; height: 2px; background: #E8E4DC; display: block; transition: all 0.3s; }
 }
 @media (min-width: 601px) { .cb-hamburger { display: none; } }
-
   .cb-logo { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #E8E4DC; }
   .cb-logo span { color: #F5620F; }
   .cb-badge { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #F5620F; border: 1px solid #F5620F; padding: 4px 10px; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -154,11 +153,10 @@
   @media (max-width: 700px) { .cb-test-grid-top { grid-template-columns: 1fr 1fr; } .cb-test-grid-bottom { grid-template-columns: 1fr 1fr; max-width: 100%; } }
   @media (max-width: 480px) { .cb-test-grid-top { grid-template-columns: 1fr; } .cb-test-grid-bottom { grid-template-columns: 1fr; max-width: 100%; } }
 </style>
-
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
+</head>
+<body>
 <div class="cb-wrap">
-
 <!-- NAV -->
 <div class="cb-nav">
   <div class="cb-container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
@@ -176,7 +174,6 @@
     </nav>
   </div>
 </div>
-
 <!-- HERO -->
 <div class="cb-hero" id="inicio"><br>
   <div class="cb-container">
@@ -185,7 +182,7 @@
     <p class="cb-sub">Ingresa al mundo de la Ciberseguridad OT sin pasar años intentando entenderlo por tu cuenta. Aprende a identificar riesgos reales, comprender cómo funcionan los entornos industriales y desarrollar el criterio que necesitan las infraestructuras críticas para proteger sus operaciones.<br><br>Una ruta de formación basada en más de 19 años de experiencia real en industrias críticas de Latinoamérica y otros mercados internacionales.</p>
     <div class="cb-meta">
       <div class="cb-meta-item"><small>más de</small><span class="cb-meta-value">19 años</span><span class="cb-meta-label">de experiencia en OT y<br>10 años como docente</span></div>
-      <div class="cb-meta-item"><small>desde</small><span class="cb-meta-value">$29 USD</span><span class="cb-meta-label">precio lanzamiento<br>primeros 20 inscritos</span></div>
+      <div class="cb-meta-item"><small>desde</small><span class="cb-meta-value">$39 USD</span><span class="cb-meta-label">precio lanzamiento<br>primeros 20 inscritos</span></div>
       <div class="cb-meta-item"><small>en vivo</small><span class="cb-meta-value">100%</span><span class="cb-meta-label">Sesiones guiadas<br>en tiempo real</span></div>
       <div class="cb-meta-item"><small>pre-requisitos</small><span class="cb-meta-value">0</span><span class="cb-meta-label">Empieza sin experiencia<br>previa</span></div>
     </div>
@@ -198,9 +195,7 @@
     </div>
   </div>
 </div>
-
 <div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 80,16 90,4 100,28 110,4 120,28 130,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
-
 <!-- PROBLEMA -->
 <div class="cb-section" id="intro"><br>
   <div class="cb-container">
@@ -220,9 +215,7 @@
     </ul>
   </div>
 </div>
-
 <div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 200,16 215,6 225,26 235,6 245,26 255,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
-
 <!-- SOLUCIÓN -->
 <div class="cb-section" id="programa"><br>
 <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:32px;padding:16px;border:1px solid #1E2330;background:#141720;">
@@ -280,7 +273,6 @@
     </div>
   </div>
 </div>
-
 <!-- DESEO -->
 <div class="cb-section" id="promesa">
   <div class="cb-container">
@@ -294,9 +286,7 @@
     <p class="cb-p">En LATAM, los profesionales con visión real en OT son escasos. Eso es una ventaja competitiva — si la construyes ahora.</p>
   </div>
 </div>
-
 <div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 100,16 115,4 130,28 145,4 160,28 175,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
-
 <!-- NIVELES -->
 <div class="cb-section" id="niveles"><br><br>
   <div class="cb-container">
@@ -310,9 +300,7 @@
     <p class="cb-p" style="margin-top:32px;font-style:italic;">Cada nivel construye sobre el anterior. Al completar la ruta completa, tendrás las competencias, los certificados y el criterio para liderar la ciberseguridad OT en cualquier entorno industrial de la región.</p>
   </div>
 </div>
-
 <div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 420,16 435,4 450,28 465,4 480,28 495,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
-
 <!-- HORARIOS -->
 <div class="cb-section" id="horarios"><br><br>
   <div class="cb-container">
@@ -320,14 +308,13 @@
     <h2 class="cb-h2">Inicio: lunes 17 de agosto.<br>Elige tu horario.</h2>
     <p class="cb-p">El nivel Fundamentos se dicta en vivo con tres opciones de horario. Elige la que mejor se adapte a tu rutina — el contenido es el mismo en todas. Todos los horarios en GMT-5 (Perú · Colombia · Ecuador).</p>
     <div class="cb-horarios">
-      <div class="cb-horario"><div class="cb-horario-label">Horario A</div><div class="cb-horario-dias">Lunes y Miércoles</div><div class="cb-horario-hora">8:30 PM — 10:30 PM</div><div class="cb-horario-tz">GMT-5 · Perú · Colombia · Ecuador</div><div class="cb-horario-detalle">8 sesiones · 4 semanas · 16 horas totales</div><div style="margin-top:10px;padding:6px 10px;background:#0d2e1a;border:1px solid #22c55e;color:#22c55e;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.05em;">✅ Vacantes disponibles</div></div>
+      <div class="cb-horario" style="opacity:0.6;"><div class="cb-horario-label">Horario A</div><div class="cb-horario-dias">Lunes y Miércoles</div><div class="cb-horario-hora">8:30 PM — 10:30 PM</div><div class="cb-horario-tz">GMT-5 · Perú · Colombia · Ecuador</div><div class="cb-horario-detalle">8 sesiones · 4 semanas · 16 horas totales</div><div style="margin-top:10px;padding:6px 10px;background:#141720;border:1px solid #3A4155;color:#3A4155;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.05em;">⛔ Sin vacantes</div></div>
       <div class="cb-horario"><div class="cb-horario-label">Horario B</div><div class="cb-horario-dias">Martes y Jueves</div><div class="cb-horario-hora">5:00 PM — 6:30 PM</div><div class="cb-horario-tz">GMT-5 · Perú · Colombia · Ecuador</div><div class="cb-horario-detalle">8 sesiones · 4 semanas · 16 horas totales</div><div style="margin-top:10px;padding:6px 10px;background:#0d2e1a;border:1px solid #22c55e;color:#22c55e;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.05em;">✅ Vacantes disponibles</div></div>
       <div class="cb-horario"><div class="cb-horario-label">Horario C</div><div class="cb-horario-dias">Sábados y Domingos</div><div class="cb-horario-hora">7:30 AM — 9:30 AM</div><div class="cb-horario-tz">GMT-5 · Perú · Colombia · Ecuador</div><div class="cb-horario-detalle">8 sesiones · 4 semanas · 16 horas totales</div><div style="margin-top:10px;padding:6px 10px;background:#0d2e1a;border:1px solid #22c55e;color:#22c55e;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.05em;">✅ Vacantes disponibles</div></div>
     </div>
     <p class="cb-p" style="font-size:14px;">Las sesiones quedan grabadas y disponibles en la plataforma. Si no puedes asistir en vivo a alguna sesión, puedes verla después sin problema.</p>
   </div>
 </div>
-
 <!-- CTA -->
 <div class="cb-cta" id="inscripcion">
   <div class="cb-container">
@@ -341,19 +328,17 @@
       <div style="padding:16px;background:#141720;border:1px solid #1E2330;opacity:0.6;"><div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:#7A8599;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Especialización</div><div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#E8E4DC;"></div><div style="font-size:11px;color:#7A8599;margin-top:4px;">🔒 Próximamente</div></div>
     </div>
     <div class="cb-price-label">⚡ Precio 2da Edición · Nivel Fundamentos ⚡</div>
-    <div class="cb-price"><sup>$</sup>29 <span style="font-size:20px;color:#7A8599;font-weight:400;">USD</span></div>
+    <div class="cb-price"><sup>$</sup>39 <span style="font-size:20px;color:#7A8599;font-weight:400;">USD</span></div>
     <div class="cb-price-note">Acceso completo · 5 módulos · 3 horarios disponibles · 3 entregables · Certificado CISObeat</div>
     <div class="cb-urgency">📅 Inicio: lunes 17 de agosto · Cupos limitados — 15 por grupo</div>
-
     <!-- SELECTOR DE GRUPO -->
     <p style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#7A8599;margin-bottom:16px;margin-top:14px;">Selecciona tu horario y haz clic en <strong style="color:#E8E4DC;">Inscribirme</strong> para ir directo al checkout de tu grupo:</p>
-
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto;">
-      <div class="cb-horario-slot available" id="slot-a" onclick="selectGroup('a')" style="cursor:pointer;transition:all 0.2s;">
+      <div class="cb-horario-slot sold-out" id="slot-a" style="cursor:not-allowed;transition:all 0.2s;">
         <div class="cb-slot-label">Grupo A</div>
         <div class="cb-slot-dias">Lun · Mié</div>
         <div class="cb-slot-hora">8:30 PM — 10:30 PM</div>
-        <div class="cb-slot-status available">✅ Vacantes disponibles</div>
+        <div class="cb-slot-status sold-out">⛔ Sin vacantes</div>
       </div>
       <div class="cb-horario-slot available" id="slot-b" onclick="selectGroup('b')" style="cursor:pointer;transition:all 0.2s;">
         <div class="cb-slot-label">Grupo B</div>
@@ -368,11 +353,8 @@
         <div class="cb-slot-status available">✅ Vacantes disponibles</div>
       </div>
     </div>
-
     <div id="group-msg" style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#F5620F;margin-bottom:16px;min-height:20px;"></div>
-
     <a id="inscripcion-btn" href="#" onclick="return goToCheckout()" class="cb-btn">Inscribirme ahora →</a>
-
     <script>
       var selectedGroup = null;
       var links = {
@@ -381,7 +363,6 @@
         c: 'https://pay.hotmart.com/V105490236C?off=ejuv65eb'
       };
       var nombres = { a: 'Grupo A — Lun/Mié 8:30 PM', b: 'Grupo B — Mar/Jue 5:00 PM', c: 'Grupo C — Sáb/Dom 7:30 AM' };
-
       function selectGroup(g) {
         selectedGroup = g;
         ['a','b','c'].forEach(function(x) {
@@ -391,7 +372,6 @@
         });
         document.getElementById('group-msg').textContent = '✅ Seleccionaste: ' + nombres[g];
       }
-
       function goToCheckout() {
         if (!selectedGroup) {
           document.getElementById('group-msg').textContent = '⚠️ Por favor selecciona un horario antes de continuar.';
@@ -405,9 +385,7 @@
     <p class="cb-cta-sub">También puedes pagar abonar S/ 95.00 vía <strong>Yape -> 959545350</strong> en Perú <br>¿Dudas? <a href="https://wa.me/51959545350?text=Hola%20Neto%2C%20tengo%20una%20consulta%20sobre%20el%20curso%20de%20Fundamentos%20de%20OT%20de%20CISObeat" target="_blank" style="color:#25D366;font-weight:600;">Escríbeme por WhatsApp</a></p>
   </div>
 </div>
-
 <div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 350,16 365,4 380,28 395,4 410,28 425,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
-
 <!-- TESTIMONIOS -->
 <div class="cb-testimonios">
   <div class="cb-container">
@@ -425,12 +403,12 @@
     </div>
   </div>
 </div>
-
 <!-- FOOTER -->
 <div class="cb-footer">
   <div class="cb-container">
     <p>© 2026 <span>CISObeat</span> Academy por Ernesto Landa · CISObeat.org · Formación pública para profesionales individuales</p>
   </div>
 </div>
-
 </div>
+</body>
+</html>
