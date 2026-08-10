@@ -124,7 +124,7 @@ function verificar(valor, auto){
   const id = norm(valor);
   if(!id){
     show("err","Falta el ID",
-      "Ingresa el ID tal como aparece en el certificado, con el formato <b>CBA-OT-AAAA-XXXXXXXX</b>.");
+      "Ingresa el ID tal como aparece en el certificado, con el formato <b>CBA-OT-XXXX-XXXXXXXX</b>.");
     return;
   }
   const destinoId = derivar(id);
