@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificación de certificados · CISOBeat Academy</title>
+<meta name="description" content="Verifica la autenticidad de un certificado emitido por CISOBeat Academy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D0F12; --bg-elev:#121417; --card:#17191D;
+    --orange:#F5620F; --orange-hover:#FF7A2E; --orange-press:#D9540B;
+    --text:#F4F6F8; --text-2:#9AA1AB; --text-3:#6E747E;
+    --line:#23262C; --line-2:#3A3F47; --ok:#22C55E; --err:#EF4444;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 20px 64px}
+  .wrap{width:100%;max-width:640px;display:flex;flex-direction:column;flex:1}
+  .brand{text-align:center;margin-bottom:8px}
+  .brand svg{width:220px;height:auto}
+  .brand .academy{font-family:'Space Grotesk';font-weight:500;font-size:13px;
+    letter-spacing:.45em;color:var(--text-2);margin-top:2px;text-transform:uppercase}
+  .eyebrow{text-align:center;font-weight:600;font-size:13px;letter-spacing:.35em;
+    color:var(--orange);text-transform:uppercase;margin:28px 0 10px}
+  h1{text-align:center;font-family:'Space Grotesk';font-weight:700;
+    font-size:clamp(26px,5vw,34px);margin-bottom:10px}
+  .sub{text-align:center;color:var(--text-2);font-size:15px;line-height:1.6;margin-bottom:36px}
+  .pulse{width:100%;margin:0 0 36px}
+  .search{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+  .search label{display:block;font-size:13px;font-weight:600;color:var(--text-2);
+    letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+  .row{display:flex;gap:10px}
+  input[type=text]{flex:1;background:var(--bg-elev);border:1px solid var(--line-2);
+    border-radius:10px;padding:14px 16px;color:var(--text);font-family:'Space Grotesk';
+    font-size:16px;letter-spacing:.04em;outline:none;min-width:0}
+  input[type=text]::placeholder{color:var(--text-3);letter-spacing:.02em}
+  input[type=text]:focus{border-color:var(--orange)}
+  button{background:var(--orange);color:var(--bg);border:none;border-radius:10px;
+    padding:14px 22px;font-family:'Inter';font-weight:600;font-size:15px;cursor:pointer;white-space:nowrap}
+  button:hover{background:var(--orange-hover)}
+  button:active{background:var(--orange-press)}
+  .hint{font-size:12.5px;color:var(--text-3);margin-top:12px}
+  .result{margin-top:26px;display:none}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .head{display:flex;align-items:center;gap:10px;padding:14px 22px;border-bottom:1px solid var(--line);
+    font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+  .head.ok{color:var(--ok)} .head.err{color:var(--err)}
+  .dot{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
+  .body{padding:22px;color:var(--text-2);font-size:15px;line-height:1.65}
+  .body b{color:var(--text)}
+  .body .idmono{font-family:'Space Grotesk';color:var(--text);letter-spacing:.04em}
+  .body a{color:var(--orange);text-decoration:none;font-weight:600}
+  .body a:hover{text-decoration:underline}
+  footer{margin-top:auto;padding-top:48px;text-align:center;color:var(--text-3);font-size:13px;line-height:1.7}
+  footer a{color:var(--text-2);text-decoration:none}
+  footer a:hover{color:var(--orange)}
+  @media(max-width:480px){.row{flex-direction:column}button{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <svg viewBox="0 0 460 84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CISOBeat Academy">
+      <path d="M6,44 h28 l8,-7 l7,7 h14 l9,-24 l12,40 l8,-16 h14 l7,-6 l8,6 h10"
+            fill="none" stroke="#F5620F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="146" y="58" font-family="Space Grotesk" font-weight="700" font-size="46" fill="#F4F6F8">CISO<tspan fill="#F5620F">beat</tspan></text>
+    </svg>
+    <div class="academy">Academy</div>
+  </div>
+
+  <div class="eyebrow">Verificación de certificados</div>
+  <h1>Comprueba la autenticidad</h1>
+  <p class="sub">Ingresa el ID que aparece en el certificado o escanea su código QR.<br>Los certificados de CISOBeat Academy son verificables públicamente.</p>
+
+  <svg class="pulse" viewBox="0 0 640 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M8,30 H250 l10,-6 l9,6 h20 l13,-24 l15,44 l11,-20 h20 l9,-5 l10,5 H632"
+          fill="none" stroke="#F5620F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+  <div class="search">
+    <label for="cid">ID del certificado</label>
+    <div class="row">
+      <input type="text" id="cid" placeholder="CBA-OT-XXXX-XXXXXXXX" autocomplete="off" spellcheck="false">
+      <button id="btn" type="button">Verificar</button>
+    </div>
+    <div class="hint">El ID se encuentra bajo el código QR del certificado.</div>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <footer>
+    CISOBeat Academy · Formación especializada en Ciberseguridad OT para LATAM<br>
+    <a href="https://cisobeat.org">cisobeat.org</a>
+  </footer>
+</div>
+
+<script>
+
+const DESTINO = "https://openchapitas.org/#verificar?ID=";
+const PREFIJO = "OC-";
+const PATRON  = /^CBA-OT-(\d{4})-([A-Z0-9]{6,12})$/;   // ID impreso en el certificado
+const PATRON_DIRECTO = /^OC-[A-Z0-9]{6,12}$/;          // ID del registro público
+
+const $ = s => document.querySelector(s);
+const norm = v => (v||"").toUpperCase().replace(/^ID[:\s]*/,"").replace(/\s+/g,"").trim();
+const esc = s => s.replace(/[<>&"]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
+
+function derivar(id){
+  if(PATRON_DIRECTO.test(id)) return id;         //
+  const m = id.match(PATRON);
+  return m ? PREFIJO + m[2] : null;              //
+}
+
+function show(cls, titulo, html){
+  const box = $("#result");
+  box.innerHTML = `<div class="card"><div class="head ${cls}"><span class="dot"></span>${titulo}</div><div class="body">${html}</div></div>`;
+  box.style.display = "block";
+}
+
+function verificar(valor, auto){
+  const id = norm(valor);
+  if(!id){
+    show("err","Falta el ID",
+      "Ingresa el ID tal como aparece en el certificado, con el formato <b>CBA-OT-AAAA-XXXXXXXX</b>.");
+    return;
+  }
+  const destinoId = derivar(id);
+  if(!destinoId){
+    show("err","Formato no válido",
+      `El ID <span class="idmono">${esc(id)}</span> no tiene el formato de un certificado de CISOBeat Academy.<br>
+       Debe verse así: <span class="idmono">CBA-OT-XXXX-XXXXXXXX</span>.<br>
+       Si crees que se trata de un error, escríbenos a <b>ernesto.landa@cisobeat.org</b>.`);
+    return;
+  }
+  const url = DESTINO + encodeURIComponent(destinoId);
+  const win = window.open(url, "_blank", "noopener");
+  show("ok","Consultando el registro público",
+    `Abrimos el registro de este certificado en una pestaña nueva.<br>
+     Si tu navegador bloqueó la ventana emergente,
+     <a href="${url}" target="_blank" rel="noopener">ábrela desde aquí</a>.`);
+  if(auto && !win) location.href = url;
+}
+
+$("#btn").addEventListener("click", ()=>verificar($("#cid").value,false));
+$("#cid").addEventListener("keydown", e=>{ if(e.key==="Enter") verificar($("#cid").value,false); });
+
+// Llegada desde el QR del certificado: /verificar/?id=CBA-OT-XXXX-XXXXXXXX
+const p = new URLSearchParams(location.search).get("id");
+if(p){ $("#cid").value = norm(p); verificar(p, true); }
+</script>
+</body>
+</html>
