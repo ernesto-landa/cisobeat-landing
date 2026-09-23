@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundamentos de Ciberseguridad OT · CISObeat Academy</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #0D0F12; }
+  .cb-wrap {
+    font-family: 'Inter', sans-serif;
+    background: #0D0F12;
+    color: #E8E4DC;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 18px;
+    width: 100%;
+    position: relative;
+  }
+  .cb-wrap * { box-sizing: border-box; }
+  .cb-wrap a { color: inherit; text-decoration: none; }
+  .cb-container { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+  .cb-nav { padding: 20px 0; border-bottom: 1px solid #1E2330; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 999; background: #0D0F12; }
+  .cb-nav-links { display: flex; gap: 24px; align-items: center; }
+  .cb-nav-link { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 500; color: #7A8599; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; }
+  .cb-nav-link:hover { color: #F5620F; }
+  .cb-nav-link.cta { color: #F5620F; border: 1px solid #F5620F; padding: 6px 14px; }
+  .cb-nav-link.cta:hover { background: #F5620F; color: #fff; }
+  @media (max-width: 600px) {
+  .cb-nav-links { display: none; flex-direction: column; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #0D0F12; z-index: 1000; justify-content: center; align-items: center; gap: 32px; }
+  .cb-nav-links.open { display: flex; }
+  .cb-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+  .cb-hamburger span { width: 24px; height: 2px; background: #E8E4DC; display: block; transition: all 0.3s; }
+}
+@media (min-width: 601px) { .cb-hamburger { display: none; } }
+  .cb-logo { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #E8E4DC; }
+  .cb-logo span { color: #F5620F; }
+  .cb-badge { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #F5620F; border: 1px solid #F5620F; padding: 4px 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .cb-hero { padding: 72px 0 56px; border-bottom: 1px solid #1E2330; }
+  .cb-eyebrow { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #F5620F; margin-bottom: 24px; }
+  .cb-h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: #E8E4DC; margin-bottom: 24px; }
+  .cb-h1 em { font-style: normal; color: #F5620F; }
+  .cb-sub { font-size: 17px; color: #7A8599; max-width: 100%; line-height: 1.65; margin-bottom: 40px; text-align: justify; }
+  .cb-sub em { font-style: normal; color: #918f8b; }
+  .cb-meta { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 48px; }
+  .cb-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .cb-meta-value { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #E8E4DC; }
+  .cb-meta-label { font-size: 12px; color: #7A8599; letter-spacing: 0.05em; }
+  .cb-ruta-label { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #d4dbe7; margin-bottom: 16px; }
+  .cb-ruta { display: flex; flex-wrap: wrap; border: 1px solid #1E2330; overflow: hidden; }
+  .cb-ruta-step { flex: 1; min-width: 140px; padding: 14px 16px; border-right: 1px solid #1E2330; }
+  .cb-ruta-step:last-child { border-right: none; }
+  .cb-ruta-step.active { background: #141720; border-top: 2px solid #F5620F; }
+  .cb-ruta-step.locked { opacity: 0.45; }
+  .cb-ruta-nivel { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #7A8599; margin-bottom: 4px; }
+  .cb-ruta-step.active .cb-ruta-nivel { color: #F5620F; }
+  .cb-ruta-nombre { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #E8E4DC; line-height: 1.3; margin-bottom: 6px; }
+  .cb-ruta-cert { font-size: 12px; color: #7A8599; line-height: 1.4; }
+  .cb-ruta-step.active .cb-ruta-cert { color: #da956a; }
+  .cb-ruta-badge { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 6px; padding: 2px 7px; }
+  .cb-ruta-step.active .cb-ruta-badge { background: rgb(63, 44, 8); color: #fff; }
+  .cb-ruta-step.locked .cb-ruta-badge { border: 1px solid #1E2330; color: #7A8599; }
+  .cb-signal { width: 100%; height: 32px; overflow: hidden; }
+  .cb-signal svg { width: 100%; height: 32px; }
+  .cb-section { padding: 64px 0; border-bottom: 1px solid #1E2330; }
+  .cb-phase { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #7A8599; border-left: 2px solid #F5620F; padding-left: 10px; margin-bottom: 28px; display: inline-block; }
+  .cb-h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 4vw, 30px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px; color: #E8E4DC; }
+  .cb-p { margin-bottom: 16px; color: #7A8599; }
+  .cb-p strong { color: #E8E4DC; font-weight: 500; }
+  .cb-prob-list { list-style: none; margin: 32px 0; display: flex; flex-direction: column; gap: 16px; padding: 0; }
+  .cb-prob-list li { background: #141720; border: 1px solid #1E2330; border-left: 3px solid #F5620F; padding: 16px 20px; font-size: 15px; color: #E8E4DC; line-height: 1.5; }
+  .cb-prob-list li strong { color: #E8E4DC; font-weight: 600; }
+  .cb-modulos { margin: 36px 0; display: flex; flex-direction: column; gap: 12px; }
+  .cb-modulo { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; padding: 20px; background: #141720; border: 1px solid #1E2330; }
+  .cb-modulo:hover { border-color: #F5620F; }
+  .cb-mod-num { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; color: #F5620F; letter-spacing: 0.1em; padding-top: 2px; }
+  .cb-mod-title { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; color: #E8E4DC; line-height: 1.35; }
+  .cb-mod-desc { font-size: 13px; color: #7A8599; margin-top: 4px; line-height: 1.5; }
+  .cb-entregables { margin: 32px 0; display: flex; flex-direction: column; gap: 12px; }
+  .cb-entregable { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border: 1px solid #1E2330; background: #141720; }
+  .cb-entregable-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 24px; }
+  .cb-entregable-text { font-size: 18px; color: #E8E4DC; font-weight: 500; }
+  .cb-instructor { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; padding: 24px; background: #141720; border: 1px solid #1E2330; margin: 32px 0; }
+  .cb-avatar { width: 64px; height: 64px; background: #F5620F; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #0D0F12; flex-shrink: 0; }
+  .cb-inst-name { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: #E8E4DC; margin-bottom: 4px; }
+  .cb-inst-role { font-size: 13px; color: #F5620F; margin-bottom: 10px; font-weight: 500; }
+  .cb-inst-bio { font-size: 14px; color: #7A8599; line-height: 1.6; }
+  .cb-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
+  .cb-tag { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 500; padding: 6px 14px; border: 1px solid #1E2330; color: #7A8599; letter-spacing: 0.03em; }
+  .cb-states { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+  .cb-state { padding: 20px; background: #141720; border: 1px solid #1E2330; }
+  .cb-state.after { border-color: #F5620F; }
+  .cb-state-tag { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; color: #7A8599; }
+  .cb-state.after .cb-state-tag { color: #F5620F; }
+  .cb-state-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .cb-state-list li { font-size: 14px; color: #7A8599; padding-left: 16px; position: relative; line-height: 1.4; }
+  .cb-state-list li::before { content: '—'; position: absolute; left: 0; color: #3A4155; }
+  .cb-state.after .cb-state-list li { color: #E8E4DC; }
+  .cb-state.after .cb-state-list li::before { color: #F5620F; content: '✓'; }
+  .cb-nivel-card { padding: 24px; border: 1px solid #1E2330; background: #141720; margin-bottom: 12px; }
+  .cb-nivel-card.active { border-left: 3px solid #F5620F; }
+  .cb-nivel-card.locked { opacity: 0.55; }
+  .cb-nivel-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .cb-nivel-num { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #7A8599; letter-spacing: 0.1em; text-transform: uppercase; }
+  .cb-nivel-badge-open { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; background: #F5620F; color: #fff; padding: 3px 10px; letter-spacing: 0.08em; }
+  .cb-nivel-badge-locked { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; border: 1px solid #1E2330; color: #7A8599; padding: 3px 10px; letter-spacing: 0.08em; }
+  .cb-nivel-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: #E8E4DC; margin-bottom: 4px; }
+  .cb-nivel-cert { font-size: 12px; color: #F5620F; margin-bottom: 12px; }
+  .cb-nivel-card.locked .cb-nivel-cert { color: #7A8599; }
+  .cb-nivel-desc { font-size: 14px; color: #7A8599; line-height: 1.6; margin: 0; }
+  .cb-horarios { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 32px 0; }
+  @media (max-width: 700px) { .cb-horarios { grid-template-columns: 1fr; } }
+  .cb-horario { padding: 24px; background: #141720; border: 1px solid #1E2330; border-top: 2px solid #F5620F; }
+  .cb-horario-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #F5620F; margin-bottom: 12px; }
+  .cb-horario-dias { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: #E8E4DC; margin-bottom: 4px; }
+  .cb-horario-hora { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: #F5620F; margin-bottom: 4px; }
+  .cb-horario-tz { font-size: 12px; color: #7A8599; margin-bottom: 12px; }
+  .cb-horario-detalle { font-size: 13px; color: #7A8599; border-top: 1px solid #1E2330; padding-top: 12px; margin-top: 8px; }
+  .cb-cta { padding: 64px 0; text-align: center; }
+  .cb-price-label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7A8599; margin-bottom: 8px; }
+  .cb-price { font-family: 'Space Grotesk', sans-serif; font-size: 56px; font-weight: 700; color: #E8E4DC; letter-spacing: -0.03em; line-height: 1; }
+  .cb-price sup { font-size: 24px; vertical-align: top; margin-top: 8px; color: #F5620F; }
+  .cb-price-note { font-size: 13px; color: #7A8599; margin-top: 8px; margin-bottom: 32px; }
+  .cb-urgency { background: #141720; border: 1px solid #F5620F; padding: 14px 20px; margin: 0 auto 32px; max-width: 420px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: #F5620F; letter-spacing: 0.05em; }
+  .cb-btn { display: inline-block; background: #F5620F; color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; padding: 18px 48px; text-decoration: none; letter-spacing: 0.02em; cursor: pointer; }
+  .cb-btn:hover { background: #FF8C42; }
+  .cb-cta-sub { font-size: 13px; color: #7A8599; margin-top: 16px; }
+  .cb-cta-sub strong { color: #E8E4DC; }
+  .cb-footer { border-top: 1px solid #1E2330; padding: 32px 0; text-align: center; }
+  .cb-footer p { font-size: 12px; color: #3A4155; }
+  .cb-footer span { color: #F5620F; }
+  @media (max-width: 480px) {
+    .cb-states { grid-template-columns: 1fr; }
+    .cb-ruta { flex-direction: column; }
+    .cb-ruta-step { border-right: none; border-bottom: 1px solid #1E2330; }
+    .cb-ruta-step:last-child { border-bottom: none; }
+  }
+  .cb-horario-slot { padding: 16px; background: #141720; border: 1px solid #1E2330; text-align: center; }
+  .cb-horario-slot.available { border-top: 2px solid #F5620F; }
+  .cb-horario-slot.sold-out { border-top: 2px solid #3A4155; opacity: 0.5; }
+  .cb-slot-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #F5620F; margin-bottom: 8px; }
+  .cb-horario-slot.sold-out .cb-slot-label { color: #3A4155; }
+  .cb-slot-dias { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: #E8E4DC; margin-bottom: 4px; }
+  .cb-slot-hora { font-size: 12px; color: #7A8599; margin-bottom: 10px; }
+  .cb-slot-status { font-size: 11px; font-weight: 600; padding: 4px 8px; }
+  .cb-slot-status.available { color: #22c55e; }
+  .cb-slot-status.sold-out { color: #3A4155; }
+  .cb-testimonios { padding: 64px 0; border-bottom: 1px solid #1E2330; }
+  .cb-test-grid-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+  .cb-test-grid-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; max-width: 66.66%; }
+  .cb-test-wrap { border: 1px solid #1E2330; background: #141720; border-top: 2px solid #F5620F; overflow: hidden; }
+  .cb-test-video { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; }
+  .cb-test-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  @media (max-width: 700px) { .cb-test-grid-top { grid-template-columns: 1fr 1fr; } .cb-test-grid-bottom { grid-template-columns: 1fr 1fr; max-width: 100%; } }
+  @media (max-width: 480px) { .cb-test-grid-top { grid-template-columns: 1fr; } .cb-test-grid-bottom { grid-template-columns: 1fr; max-width: 100%; } }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="cb-wrap">
+<!-- NAV -->
+<div class="cb-nav">
+  <div class="cb-container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+    <div class="cb-logo">CISO<span>beat</span></div>
+    <div class="cb-hamburger" onclick="this.classList.toggle('active');document.querySelector('.cb-nav-links').classList.toggle('open');">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="cb-nav-links">
+      <a class="cb-nav-link" href="#inicio" onclick="document.querySelector('.cb-nav-links').classList.remove('open')">Inicio</a>
+      <a class="cb-nav-link" href="#intro" onclick="document.querySelector('.cb-nav-links').classList.remove('open')">La Propuesta</a>
+      <a class="cb-nav-link" href="#programa" onclick="document.querySelector('.cb-nav-links').classList.remove('open')">Programa</a>
+      <a class="cb-nav-link" href="#niveles" onclick="document.querySelector('.cb-nav-links').classList.remove('open')">Niveles</a>
+      <a class="cb-nav-link" href="#horarios" onclick="document.querySelector('.cb-nav-links').classList.remove('open')">Horarios</a>
+      <a class="cb-nav-link cta" href="#inscripcion" onclick="document.querySelector('.cb-nav-links').classList.remove('open')">Inscríbete</a>
+    </nav>
+  </div>
+</div>
+<!-- HERO -->
+<div class="cb-hero" id="inicio"><br>
+  <div class="cb-container">
+    <div class="cb-eyebrow">EDICIÓN ESPECIAL · INTENSIVA - CISObeat Academy</div>
+    <h1 class="cb-h1"><em>Fundamentos de<br>Ciberseguridad OT</em></h1>
+    <p class="cb-sub">Una puerta de entrada al mundo OT para comprender cómo funcionan los entornos industriales, reconocer sus riesgos y construir una base sólida para proteger la operación.<br><br>El objetivo no es convertirte en especialista en un solo curso. Es darte los fundamentos para aprender a pensar como profesional de ciberseguridad OT y saber qué aprender después.</p>
+    <div style="display:inline-block;background:#141720;border:1px solid #F5620F;padding:12px 20px;margin:0 0 36px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#F5620F;letter-spacing:0.05em;">📅 Edición Especial Intensiva · Inicio 29 de setiembre · Online</div>
+    <div class="cb-meta">
+      <div class="cb-meta-item"><small>nivel</small><span class="cb-meta-value">Nivel 1</span><span class="cb-meta-label">Fundamentos de<br>Ciberseguridad OT</span></div>
+      <div class="cb-meta-item"><small>modalidad</small><span class="cb-meta-value">Online</span><span class="cb-meta-label">formación<br>profesional</span></div>
+      <div class="cb-meta-item"><small>duración</small><span class="cb-meta-value">16 horas</span><span class="cb-meta-label">8h en vivo +<br>8h grabadas</span></div>
+      <div class="cb-meta-item"><small>requisitos</small><span class="cb-meta-value">0</span><span class="cb-meta-label">No necesitas experiencia<br>previa en OT</span></div>
+    </div>
+    <div class="cb-ruta-label">Ruta CISObeat · Desarrollo progresivo</div>
+    <div class="cb-ruta">
+      <div class="cb-ruta-step active"><div class="cb-ruta-nivel">Nivel 1</div><div class="cb-ruta-nombre">Fundamentos</div><div class="cb-ruta-cert">CONOCE · Comprender OT, riesgos y fundamentos</div><span class="cb-ruta-badge">✅ Actual</span></div>
+      <div class="cb-ruta-step locked"><div class="cb-ruta-nivel">Nivel 2</div><div class="cb-ruta-nombre">Intermedio</div><div class="cb-ruta-cert">APLICA · Aplicar metodologías, marcos y controles</div><span class="cb-ruta-badge">🔒 Próximamente</span></div>
+      <div class="cb-ruta-step locked"><div class="cb-ruta-nivel">Nivel 3</div><div class="cb-ruta-nombre">Avanzado</div><div class="cb-ruta-cert">DISEÑA · Diseñar, evaluar e implementar</div><span class="cb-ruta-badge">🔒 Próximamente</span></div>
+      <div class="cb-ruta-step locked"><div class="cb-ruta-nivel">Nivel 4</div><div class="cb-ruta-nombre">Especialista</div><div class="cb-ruta-cert">ESPECIALÍZATE · Dominar una disciplina concreta</div><span class="cb-ruta-badge">🔒 Próximamente</span></div>
+    </div>
+
+<div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 80,16 90,4 100,28 110,4 120,28 130,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
+<!-- PROBLEMA -->
+<div class="cb-section" id="intro"><br>
+  <div class="cb-container">
+    <span class="cb-phase">La propuesta</span>
+    <h2 class="cb-h2">No es otro curso de ciberseguridad.<br>Es una puerta de entrada al mundo OT.</h2>
+    <p class="cb-p">La mayoría de profesionales de ciberseguridad conocen IT. El reto comienza cuando la tecnología está conectada a un proceso físico.</p>
+    <p class="cb-p">En OT, la disponibilidad, la integridad del proceso, la continuidad y la seguridad operacional pasan a formar parte de la ecuación.</p>
+    <div class="cb-prob-list">
+      <li><strong>01 · COMPRENDER</strong><br>OT, ICS e IACS · Arquitectura industrial · Componentes y procesos · IT vs. OT</li>
+      <li><strong>02 · RECONOCER</strong><br>Amenazas y vectores · Superficie de ataque · Casos reales · Impacto operacional</li>
+      <li><strong>03 · EVALUAR</strong><br>Frameworks · Madurez · Brechas · Prioridades y riesgo</li>
+    </div>
+    <p class="cb-p"><strong>Resultado:</strong> una base común para hablar de Ciberseguridad OT con criterio técnico y operacional.</p>
+  </div>
+</div>
+<div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 200,16 215,6 225,26 235,6 245,26 255,16 680,16" fill="none" stroke="#f00" stroke-width="1.5" opacity="0.4"/></svg></div>
+    <p class="cb-p" style="margin-top:24px;">Cuando no tienes una base clara de ciberseguridad OT, esto es lo que ocurre:</p>
+    <ul class="cb-prob-list">
+      <li>Sabes que la ciberseguridad es crítica en OT, pero nunca te enseñaron cómo se aplica en entornos industriales reales, y terminas tomando decisiones sin un marco claro de referencia.</li>
+      <li>La infraestructura crítica ya está expuesta, pero no tienes una forma estructurada de entender tu nivel de riesgo hasta que ocurre un incidente o una auditoría lo evidencia.</li>
+      <li>La formación en OT existe, pero es costosa, poco accesible o desconectada de la operación real, lo que te obliga a aprender de forma fragmentada y sin guía práctica.</li>
+      <li>Pasas de IT a OT sin una transición real, y aplicas modelos de seguridad que no consideran las restricciones, prioridades ni riesgos del entorno industrial.</li>
+    </ul>
+  </div>
+</div>
+<div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 200,16 215,6 225,26 235,6 245,26 255,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
+<!-- SOLUCIÓN -->
+<div class="cb-section" id="programa"><br>
+<div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:32px;padding:16px;border:1px solid #1E2330;background:#141720;">
+  <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;color:#c1c7d1;letter-spacing:0.05em;">En esta sección:</span>
+  <a href="#modulos" style="font-family:'Space Grotesk',sans-serif;font-size:12px;color:#F5620F;letter-spacing:0.05em;text-decoration:none;">📚 Módulos</a>
+  <a href="#entregables" style="font-family:'Space Grotesk',sans-serif;font-size:12px;color:#F5620F;letter-spacing:0.05em;text-decoration:none;">📦 Entregables</a>
+  <a href="#docente" style="font-family:'Space Grotesk',sans-serif;font-size:12px;color:#F5620F;letter-spacing:0.05em;text-decoration:none;">👤 Docente</a>
+  <a href="#audiencia" style="font-family:'Space Grotesk',sans-serif;font-size:12px;color:#F5620F;letter-spacing:0.05em;text-decoration:none;">🎯 ¿Para quién?</a>
+</div>
+  <div class="cb-container" id="modulos"><br><br><br><br>
+    <span class="cb-phase">El Programa</span>
+    <h2 class="cb-h2">De cero a una visión integral de OT.</h2>
+    <p class="cb-p">Cinco pasos construyen el fundamento: entender OT, entender el riesgo, conocer los marcos, evaluar y continuar.</p>
+    <p class="cb-p">La meta no es convertirte en especialista en un solo curso. Es darte los fundamentos para saber qué aprender después.</p>
+    <h2 class="cb-h2">Fundamentos de Ciberseguridad OT — 5 módulos</h2>
+    <div class="cb-modulos">
+      <div class="cb-modulo"><div class="cb-mod-num">M1</div><div><div class="cb-mod-title">Entender OT</div><div class="cb-mod-desc">Qué es OT, por qué es diferente y cómo funciona: OT, ICS e IACS, componentes, arquitectura industrial, Purdue, IT/OT, DMZ y OT tradicional vs. moderna.</div></div></div>
+      <div class="cb-modulo"><div class="cb-mod-num">M2</div><div><div class="cb-mod-title">Entender el riesgo</div><div class="cb-mod-desc">Qué protegemos, qué puede salir mal y por dónde: activos, procesos, continuidad, amenazas, superficie de ataque, terceros, acceso remoto y casos reales.</div></div></div>
+      <div class="cb-modulo"><div class="cb-mod-num">M3</div><div><div class="cb-mod-title">Conocer los marcos</div><div class="cb-mod-desc">ISA/IEC 62443, NIST CSF 2.0 y referentes clave para dar estructura a la ciberseguridad OT.</div></div></div>
+      <div class="cb-modulo"><div class="cb-mod-num">M4</div><div><div class="cb-mod-title">Evaluar dónde estás parado</div><div class="cb-mod-desc">Pasar de percepción a evidencia, de evidencia a brecha y de brecha a acción: madurez, Maturity Check, prioridades y riesgo.</div></div></div>
+      <div class="cb-modulo"><div class="cb-mod-num">M5</div><div><div class="cb-mod-title">La Ruta CISObeat</div><div class="cb-mod-desc">Un mapa para saber qué aprender después: CONOCE → APLICA → DISEÑA → ESPECIALÍZATE.</div></div></div>
+    </div>
+    <div id="entregables"><br><br>
+      <p class="cb-p" style="margin-top:40px;"><strong>Qué te llevas:</strong></p>
+      <div class="cb-entregables">
+        <div class="cb-entregable"><div class="cb-entregable-icon">📘</div><div class="cb-entregable-text">Manual de Referencia de Fundamentos OT</div></div>
+        <div class="cb-entregable"><div class="cb-entregable-icon">📋</div><div class="cb-entregable-text">Maturity Check</div></div>
+        <div class="cb-entregable"><div class="cb-entregable-icon">📄</div><div class="cb-entregable-text">Plantilla de Tratamiento de Riesgos</div></div>
+        <div class="cb-entregable"><div class="cb-entregable-icon">🧭</div><div class="cb-entregable-text">Ruta CISObeat para continuar tu desarrollo</div></div>
+      </div>
+    </div>
+    <div id="docente"><br><br>
+      <div class="cb-instructor">
+        <img src="https://CISObeat.carrd.co/assets/images/image01.jpg" alt="Ernesto Landa" style="width:100%;object-fit:cover;border-radius:0;flex-shrink:0;">
+        <div>
+          <div class="cb-inst-name">Ernesto Landa</div>
+          <div class="cb-inst-role">Instructor · Ciberseguridad OT</div>
+          <p class="cb-inst-bio">Profesional especializado en Ciberseguridad OT y formación de profesionales en entornos industriales. CISObeat Academy estructura una ruta progresiva para comprender OT, reconocer riesgos, conocer los marcos y desarrollar criterio para continuar la especialización.</p>
+        </div>
+      </div>
+    </div>
+    <div id="audiencia"><br><br>
+      <p class="cb-p" style="margin-top:40px;"><strong>¿Para quién es?</strong></p><br>
+      <div class="cb-tags">
+        <span class="cb-tag">Profesionales de ciberseguridad que ingresan a OT</span>
+        <span class="cb-tag">Profesionales IT</span>
+        <span class="cb-tag">Ingeniería y automatización</span>
+        <span class="cb-tag">Operaciones</span>
+        <span class="cb-tag">Líderes y responsables de riesgo</span>
+      </div>
+      <p class="cb-p" style="font-size:14px;">No necesitas ser especialista para comenzar. Si tu trabajo toca tecnología industrial, procesos físicos o continuidad operacional, estos fundamentos importan.</p>
+    </div>
+  </div>
+</div>
+<!-- DESEO -->
+<div class="cb-section" id="promesa">
+  <div class="cb-container">
+    <span class="cb-phase">Experiencia de aprendizaje</span>
+    <h2 class="cb-h2">De cero a una visión integral de OT.</h2>
+    <p class="cb-p">Cinco pasos construyen el fundamento.</p>
+    <div class="cb-states">
+      <div class="cb-state"><div class="cb-state-tag">01 · ENTENDER OT</div><ul class="cb-state-list"><li>Qué es OT, por qué es diferente y cómo funciona.</li><li>Arquitectura, componentes y relación IT/OT.</li></ul></div>
+      <div class="cb-state after"><div class="cb-state-tag">02 · ENTENDER EL RIESGO</div><ul class="cb-state-list"><li>Qué protegemos, qué puede salir mal y por dónde.</li><li>Amenazas, superficie de ataque e impacto operacional.</li></ul></div>
+      <div class="cb-state"><div class="cb-state-tag">03 · CONOCER LOS MARCOS</div><ul class="cb-state-list"><li>ISA/IEC 62443, NIST CSF 2.0 y referentes.</li><li>Cómo dan estructura a la ciberseguridad OT.</li></ul></div>
+      <div class="cb-state"><div class="cb-state-tag">04 · EVALUAR</div><ul class="cb-state-list"><li>Madurez, evidencia, brechas y prioridades.</li><li>Pasar de percepción a acción.</li></ul></div>
+      <div class="cb-state after"><div class="cb-state-tag">05 · CONTINUAR</div><ul class="cb-state-list"><li>La Ruta CISObeat hacia Intermedio, Avanzado y Especialista.</li><li>Una guía para saber qué aprender después.</li></ul></div>
+    </div>
+    <p class="cb-p"><strong>La meta no es convertirte en especialista en un solo curso. Es darte los fundamentos para saber qué aprender después.</strong></p>
+  </div>
+</div>
+<div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 100,16 115,4 130,28 145,4 160,28 175,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
+<!-- NIVELES -->
+<div class="cb-section" id="niveles"><br><br>
+  <div class="cb-container">
+    <span class="cb-phase">La Ruta CISObeat</span>
+    <h2 class="cb-h2">Un mapa para saber<br>qué aprender después.</h2>
+    <p class="cb-p">Fundamentos es el punto de entrada. Los siguientes niveles profundizan y especializan.</p>
+    <div class="cb-nivel-card active"><div class="cb-nivel-header"><div class="cb-nivel-badge-open">CONOCE</div><div class="cb-nivel-num">Nivel 1</div></div><div class="cb-nivel-title">Fundamentos</div><div class="cb-nivel-cert">Comprender OT, riesgos y fundamentos</div><p class="cb-nivel-desc">El punto de entrada a la ruta. Construye una visión integral de OT, reconoce riesgos, conoce los marcos y aprende a evaluar dónde estás parado.</p></div>
+    <div class="cb-nivel-card locked"><div class="cb-nivel-header"><div class="cb-nivel-badge-locked">APLICA</div><div class="cb-nivel-num">Nivel 2</div></div><div class="cb-nivel-title">Intermedio</div><div class="cb-nivel-cert">Aplicar metodologías, marcos y controles</div><p class="cb-nivel-desc">Profundiza en la aplicación práctica de metodologías, marcos y controles de ciberseguridad OT.</p></div>
+    <div class="cb-nivel-card locked"><div class="cb-nivel-header"><div class="cb-nivel-badge-locked">DISEÑA</div><div class="cb-nivel-num">Nivel 3</div></div><div class="cb-nivel-title">Avanzado</div><div class="cb-nivel-cert">Diseñar, evaluar e implementar</div><p class="cb-nivel-desc">Desarrolla capacidades para diseñar, evaluar e implementar soluciones y programas de ciberseguridad OT.</p></div>
+    <div class="cb-nivel-card locked"><div class="cb-nivel-header"><div class="cb-nivel-badge-locked">ESPECIALÍZATE</div><div class="cb-nivel-num">Nivel 4</div></div><div class="cb-nivel-title">Especialista</div><div class="cb-nivel-cert">Dominar una disciplina concreta</div><p class="cb-nivel-desc">Profundiza y especialízate en una disciplina concreta de ciberseguridad OT.</p></div>
+    <p class="cb-p" style="margin-top:32px;font-style:italic;">CONOCE → APLICA → DISEÑA → ESPECIALÍZATE</p>
+  </div>
+</div>
+<div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 420,16 435,4 450,28 465,4 480,28 495,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
+<!-- HORARIOS -->
+<div class="cb-section" id="horarios"><br><br>
+  <div class="cb-container">
+    <span class="cb-phase">Edición Especial Intensiva</span>
+    <h2 class="cb-h2">Inicio: 29 de setiembre.<br>Online · Nivel 1 · Fundamentos</h2>
+    <p class="cb-p">La edición especial intensiva combina 8 horas de clases en vivo con 8 horas de contenido grabado, para un total de 16 horas.</p>
+    <div class="cb-horario" style="max-width:420px;margin:0 0 32px;">
+      <div class="cb-horario-label">Inicio</div>
+      <div class="cb-horario-dias">29 de setiembre</div>
+      <div class="cb-horario-hora">ONLINE</div>
+      <div class="cb-horario-tz">Edición Especial Intensiva</div>
+      <div class="cb-horario-detalle">8 horas en vivo · 8 horas grabadas · 16 horas totales</div>
+    </div>
+    <p class="cb-p" style="font-size:14px;">Las 8 horas grabadas complementan las sesiones en vivo y permiten reforzar los conceptos a tu propio ritmo.</p>
+  </div>
+</div>
+<!-- CTA -->
+<div class="cb-cta" id="inscripcion">
+  <div class="cb-container">
+    <span class="cb-phase">Inscripción</span>
+    <h2 class="cb-h2">Edición Especial Intensiva<br>Tu entrada al mundo Ciberseguridad OT</h2>
+    <p class="cb-p">Comprende el mundo OT. Reconoce sus riesgos. Aprende a proteger la operación.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;">
+      <div style="padding:16px;background:#141720;border:2px solid #F5620F;"><div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:#F5620F;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Fundamentos</div><div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#E8E4DC;">$67</div><div style="font-size:11px;color:#F5620F;margin-top:4px;">✅ Abierto</div></div>
+      <div style="padding:16px;background:#141720;border:1px solid #1E2330;opacity:0.6;"><div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:#7A8599;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Intermedio</div><div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#E8E4DC;"></div><div style="font-size:11px;color:#7A8599;margin-top:4px;">🔒 Próximamente</div></div>
+      <div style="padding:16px;background:#141720;border:1px solid #1E2330;opacity:0.6;"><div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:#7A8599;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Avanzado</div><div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#E8E4DC;"></div><div style="font-size:11px;color:#7A8599;margin-top:4px;">🔒 Próximamente</div></div>
+      <div style="padding:16px;background:#141720;border:1px solid #1E2330;opacity:0.6;"><div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:#7A8599;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;">Especialización</div><div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#E8E4DC;"></div><div style="font-size:11px;color:#7A8599;margin-top:4px;">🔒 Próximamente</div></div>
+    </div>
+    <div class="cb-price-label">Precio · Edición Especial Intensiva</div>
+    <div class="cb-price"><sup>$</sup>67 <span style="font-size:20px;color:#7A8599;font-weight:400;">USD</span></div>
+    <div class="cb-price-note">Nivel 1 · 5 módulos · 8h en vivo + 8h grabadas · Manual de Referencia · Maturity Check · Plantilla de Tratamiento de Riesgos</div>
+    <div class="cb-urgency">📅 Inicio 29 de setiembre · Online · Edición Especial Intensiva</div>
+    <a href="https://pay.hotmart.com/V105490236C?off=qjzh3uuv" target="_blank" class="cb-btn">Inscribirme ahora →</a>
+    <p class="cb-cta-sub">También puedes pagar abonar S/ 130.00 vía <strong>Yape -> 959545350</strong> en Perú <br>¿Dudas? <a href="https://wa.me/51959545350?text=Hola%20Neto%2C%20tengo%20una%20consulta%20sobre%20el%20curso%20de%20Fundamentos%20de%20OT%20de%20CISObeat" target="_blank" style="color:#25D366;font-weight:600;">Escríbeme por WhatsApp</a></p>
+  </div>
+</div>
+<div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 350,16 365,4 380,28 395,4 410,28 425,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
+<!-- TESTIMONIOS -->
+  <div class="cb-cta" id="testimonios">
+<div class="cb-testimonios">
+  <div class="cb-container">
+    <span class="cb-phase">Testimonios</span>
+    <h2 class="cb-h2">Lo que dicen quienes<br>ya llevaron sus cursos.</h2>
+    <p class="cb-p">Profesionales de distintas industrias y países de LATAM que han tomado sus programas de formación.</p>
+    <div class="cb-test-grid-top">
+      <div class="cb-test-wrap"><div class="cb-test-video"><iframe src="https://www.youtube.com/embed/icm6rAR_om8" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="cb-test-wrap"><div class="cb-test-video"><iframe src="https://www.youtube.com/embed/t-t7m8n-HeM" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="cb-test-wrap"><div class="cb-test-video"><iframe src="https://www.youtube.com/embed/kHK6MiTBghI" allowfullscreen loading="lazy"></iframe></div></div>
+    </div>
+    <div class="cb-test-grid-bottom">
+      <div class="cb-test-wrap"><div class="cb-test-video"><iframe src="https://www.youtube.com/embed/-7Op1kP50MU" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="cb-test-wrap"><div class="cb-test-video"><iframe src="https://www.youtube.com/embed/57YVKgcWh8M" allowfullscreen loading="lazy"></iframe></div></div>
+      <div class="cb-test-wrap"><div class="cb-test-video"><iframe src="https://www.youtube.com/embed/CJjEKMc9SXU" allowfullscreen loading="lazy"></iframe></div></div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- FOOTER -->
+<div class="cb-footer">
+  <div class="cb-container">
+    <p>© 2026 <span>CISObeat</span> Academy · Formación profesional en Ciberseguridad OT</p>
+  </div>
+</div>
+</div>
+</body>
+</html>
