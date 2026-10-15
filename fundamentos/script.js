@@ -24,3 +24,13 @@ document.querySelectorAll('.video-play').forEach(button => {
   frame.focus();
  });
 });
+
+const yapeDialog = document.getElementById('yape-dialog');
+const yapeTrigger = document.getElementById('yape-open');
+yapeTrigger.addEventListener('click', () => { yapeDialog.showModal(); document.body.classList.add('modal-open'); });
+yapeDialog.querySelector('.modal-close').addEventListener('click', () => yapeDialog.close());
+yapeDialog.addEventListener('click', event => {
+ const r = yapeDialog.getBoundingClientRect();
+ if (event.target === yapeDialog && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) yapeDialog.close();
+});
+yapeDialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); yapeTrigger.focus(); });
