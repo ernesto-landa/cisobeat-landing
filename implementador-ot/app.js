@@ -8,7 +8,7 @@
  const phone=/^\d{8,15}$/.test(cfg.whatsapp||'')?cfg.whatsapp:'51959545350';
  document.querySelectorAll('[data-whatsapp]').forEach(a=>{
   const position=a.dataset.whatsapp;
-  const message=`Hola, quiero información del curso Implementador de Programas de Ciberseguridad OT, Nivel 3, que inicia el 5 de enero de 2027.\nOrigen: ${source}. Consulta: ${position}.`;
+  const message=`Hola, quiero información del curso avanzado Implementador de Programas de Ciberseguridad OT, que inicia el 5 de enero de 2027.\nOrigen: ${source}. Consulta: ${position}.`;
   a.href=`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   a.target='_blank';a.rel='noopener noreferrer';
  });
