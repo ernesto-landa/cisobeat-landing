@@ -190,8 +190,8 @@
     <p class="cb-sub">Conocer los conceptos de ciberseguridad OT no es lo mismo que poder evaluar, con un modelo estructurado, dónde está realmente tu organización. Este programa te lleva de la teoría a una evaluación de madurez real con C2M2 V2.1: preparas la evaluación, la aplicas sobre un caso, interpretas resultados, identificas brechas y sales con un plan de acción que puedes presentar a nivel ejecutivo.</p>
     <div class="cb-meta">
       <div class="cb-meta-item"><small>duración total</small><span class="cb-meta-value">10 horas</span><span class="cb-meta-label">8h en vivo + 2h<br>grabadas</span></div>
-      <div class="cb-meta-item"><small>desde</small><span class="cb-meta-value">$197 USD</span><span class="cb-meta-label">precio regular<br></span></div>
-      <div class="cb-meta-item"><small>cupo</small><span class="cb-meta-value">10</span><span class="cb-meta-label">participantes por grupo<br>2 grupos disponibles</span></div>
+      <div class="cb-meta-item"><small>lanzamiento</small><span class="cb-meta-value">$219 USD</span><span class="cb-meta-label">regular $247 USD<br></span></div>
+      <div class="cb-meta-item"><small>cupo</small><span class="cb-meta-value">30</span><span class="cb-meta-label">participantes · grupo único<br></span></div>
     </div>
   </div>
 </div>
@@ -331,155 +331,42 @@
     </div>
   </div>
 </div>
-<!-- HORARIOS -->
+<!-- HORARIOS: EDICIÓN NOVIEMBRE–DICIEMBRE 2026 -->
 <div class="cb-section" id="horarios"><br>
-  <div class="cb-container">
-    <span class="cb-phase">Horarios</span>
-    <h2 class="cb-h2">Dos grupos disponibles. Elige el tuyo.</h2>
-    <p class="cb-p">4 sesiones en vivo de 2 horas cada una, más el bloque grabado de los 10 dominios. Cupo real de 10 participantes por grupo, sin ampliar.</p>
-    <div class="cb-horarios-layout">
-      <div>
-        <div class="cb-tz-select-label">Elige tu país para ver el horario en tu zona:</div>
-        <div class="cb-tz-options" role="radiogroup" aria-label="Selector de país">
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="ar" checked onchange="updateHoras(this.value)"> Argentina</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="bo" onchange="updateHoras(this.value)"> Bolivia</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="cl" onchange="updateHoras(this.value)"> Chile</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="co" onchange="updateHoras(this.value)"> Colombia</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="ec" onchange="updateHoras(this.value)"> Ecuador</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="mx" onchange="updateHoras(this.value)"> México</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="pe" onchange="updateHoras(this.value)"> Perú</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="uy" onchange="updateHoras(this.value)"> Uruguay</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry" value="ve" onchange="updateHoras(this.value)"> Venezuela</label>
-        </div>
-      </div>
-      <div class="cb-horarios-stack">
-        <div class="cb-horario">
-          <div class="cb-horario-label">Grupo A</div>
-          <div class="cb-horario-dias">Martes y Jueves</div>
-          <div class="cb-horario-hora" id="hora-a">8:30 PM – 10:30 PM</div>
-          <div class="cb-tz-showing" id="tz-showing-a">Hora mostrada para: <strong>Argentina</strong></div>
-          <div class="cb-horario-detalle">Inicio: martes 8 de setiembre · 4 sesiones en vivo · 8 horas · cupo: 10 participantes</div>
-        </div>
-        <div class="cb-horario">
-          <div class="cb-horario-label">Grupo B</div>
-          <div class="cb-horario-dias">Lunes y Miércoles</div>
-          <div class="cb-horario-hora" id="hora-b">9:00 PM – 11:00 PM</div>
-          <div class="cb-tz-showing" id="tz-showing-b">Hora mostrada para: <strong>Argentina</strong></div>
-          <div class="cb-horario-detalle">Inicio: lunes 7 de setiembre · 4 sesiones en vivo · 8 horas · cupo: 10 participantes</div>
-        </div>
-      </div>
-    </div>
-    <p class="cb-p" style="font-size:14px;">Las sesiones en vivo quedan grabadas y disponibles en el aula virtual durante un mes después de finalizar el curso. Los horarios de otros países se calculan automáticamente y son referenciales.</p>
-    <script>
-      var tzMap = {
-        ar: { name: 'Argentina', offset: 2 },
-        bo: { name: 'Bolivia', offset: 1 },
-        cl: { name: 'Chile', offset: 2 },
-        co: { name: 'Colombia', offset: 0 },
-        ec: { name: 'Ecuador', offset: 0 },
-        mx: { name: 'México', offset: -1 },
-        pe: { name: 'Perú', offset: 0 },
-        uy: { name: 'Uruguay', offset: 2 },
-        ve: { name: 'Venezuela', offset: 1 }
-      };
-      function formatTime(baseHour, baseMinute, offsetHours) {
-        var total = ((baseHour * 60 + baseMinute + offsetHours * 60) % 1440 + 1440) % 1440;
-        var h = Math.floor(total / 60);
-        var m = total % 60;
-        var ampm = h >= 12 ? 'PM' : 'AM';
-        var h12 = h % 12; if (h12 === 0) h12 = 12;
-        var mm = m < 10 ? '0' + m : '' + m;
-        return h12 + ':' + mm + ' ' + ampm;
-      }
-      function updateHoras(code) {
-        var tz = tzMap[code];
-        if (!tz) return;
-        document.getElementById('hora-a').textContent = formatTime(18, 30, tz.offset) + ' – ' + formatTime(20, 30, tz.offset);
-        document.getElementById('hora-b').textContent = formatTime(19, 0, tz.offset) + ' – ' + formatTime(21, 0, tz.offset);
-        document.getElementById('tz-showing-a').innerHTML = 'Hora mostrada para: <strong>' + tz.name + '</strong>';
-        document.getElementById('tz-showing-b').innerHTML = 'Hora mostrada para: <strong>' + tz.name + '</strong>';
-      }
-    </script>
+ <div class="cb-container">
+  <span class="cb-phase">Calendario</span>
+  <h2 class="cb-h2">Una edición. Cuatro encuentros.</h2>
+  <p class="cb-p">Grupo único de 30 participantes. Sesiones en vivo de 6:30 a 8:30 p. m. (hora Perú), más 2 horas de contenido grabado.</p>
+  <div class="cb-horarios-stack">
+   <div class="cb-horario">
+    <div class="cb-horario-label">Edición noviembre–diciembre 2026</div>
+    <div class="cb-horario-dias">Martes 17 y jueves 19 de noviembre · Martes 1 y jueves 3 de diciembre</div>
+    <div class="cb-horario-hora">6:30–8:30 p. m. · Perú</div>
+    <div class="cb-horario-detalle">4 sesiones · 8 horas en vivo · 30 cupos en un único grupo</div>
+   </div>
   </div>
+  <p class="cb-p" style="font-size:14px;">Las sesiones en vivo quedan grabadas y disponibles en el aula virtual durante un mes después de finalizar el curso.</p>
+ </div>
 </div>
-<!-- CTA -->
+<div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 100,16 115,4 130,28 145,4 160,28 175,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
+<!-- CTA: ofertas confirmadas por el usuario, edición noviembre–diciembre 2026 -->
 <div class="cb-cta" id="inscripcion">
-  <div class="cb-container">
-    <span class="cb-phase">Inscripción</span>
-    <h2 class="cb-h2">Inversión</h2>
-    <p class="cb-p">Selecciona tu grupo y escríbenos para reservar tu cupo. Al ser un cupo real de 10 por grupo, se cierra al completarse.</p>
-    <div class="cb-price-label">⚡ Precio Regular ⚡</div>
-    <div class="cb-price"><sup>$</sup>197 <span style="font-size:20px;color:#7A8599;font-weight:400;">USD</span></div>
-    <div class="cb-price-note">Precio regular: <s>$197 USD</s> · Egresados CISObeat Academy: $117 USD</div>
-    <div class="cb-urgency">📅 Grupo B inicia lunes 7 de setiembre · Grupo A inicia martes 8 de setiembre · Cupo real: 10 por grupo</div>
-    <p style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#7A8599;margin-bottom:16px;">Elige tu país para ver el horario en tu zona, luego selecciona tu grupo y haz clic en <strong style="color:#E8E4DC;">Reservar mi cupo</strong>:</p>
-    <div class="cb-horarios-layout" style="text-align:left;max-width:640px;margin:0 auto 24px;">
-      <div>
-        <div class="cb-tz-select-label">Elige tu país:</div>
-        <div class="cb-tz-options" role="radiogroup" aria-label="Selector de país">
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="ar" checked onchange="updateHorasCTA(this.value)"> Argentina</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="bo" onchange="updateHorasCTA(this.value)"> Bolivia</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="cl" onchange="updateHorasCTA(this.value)"> Chile</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="co" onchange="updateHorasCTA(this.value)"> Colombia</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="ec" onchange="updateHorasCTA(this.value)"> Ecuador</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="mx" onchange="updateHorasCTA(this.value)"> México</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="pe" onchange="updateHorasCTA(this.value)"> Perú</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="uy" onchange="updateHorasCTA(this.value)"> Uruguay</label>
-          <label class="cb-tz-option"><input type="radio" name="tzcountry2" value="ve" onchange="updateHorasCTA(this.value)"> Venezuela</label>
-        </div>
-      </div>
-      <div class="cb-horarios-stack">
-        <div class="cb-horario-slot available" id="slot-a" onclick="selectGroup('a')">
-          <div class="cb-slot-label">Grupo A</div>
-          <div class="cb-slot-dias">Martes y Jueves</div>
-          <div class="cb-slot-hora" id="slot-hora-a">8:30 – 10:30 PM</div>
-         <div class="cb-slot-status available">✅ Vacantes disponibles</div>
-        </div>
-        <div class="cb-horario-slot sold-out" id="slot-b" style="cursor:not-allowed;opacity:0.5;">
-          <div class="cb-slot-label">Grupo B</div>
-          <div class="cb-slot-dias">Lunes y Miércoles</div>
-          <div class="cb-slot-hora" id="slot-hora-b">9:00 – 11:00 PM</div>
-          <div class="cb-slot-status sold-out">⛔ Sin vacantes</div>
-        </div>
-      </div>
-    </div>
-    <div id="group-msg" style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#F5620F;margin-bottom:16px;min-height:20px;"></div>
-    <a id="inscripcion-btn" href="#" onclick="return goToCheckout()" class="cb-btn">Reservar mi cupo →</a>
-    <script>
-      var selectedGroup = null;
-      var links = {
-        a: 'https://pay.hotmart.com/N107126655P?off=b5gvv648',
-        b: 'https://pay.hotmart.com/N107126655P?off=n0bztww1'
-      };
-      var nombresCTA = { a: 'Grupo A · Martes y Jueves', b: 'Grupo B · Lunes y Miércoles' };
-      function selectGroup(g) {
-        selectedGroup = g;
-        ['a','b'].forEach(function(x) {
-          var el = document.getElementById('slot-' + x);
-          el.style.outline = x === g ? '2px solid #F5620F' : 'none';
-          el.style.background = x === g ? '#1e1a14' : '#141720';
-        });
-        document.getElementById('group-msg').textContent = '✅ Seleccionaste: ' + nombresCTA[g];
-        document.getElementById('group-msg').style.color = '#22c55e';
-      }
-      function goToCheckout() {
-        if (!selectedGroup) {
-          document.getElementById('group-msg').textContent = '⚠️ Por favor selecciona un grupo antes de continuar.';
-          document.getElementById('group-msg').style.color = '#F5620F';
-          return false;
-        }
-        window.open(links[selectedGroup], '_blank');
-        return false;
-      }
-      function updateHorasCTA(code) {
-        var tz = tzMap[code];
-        if (!tz) return;
-        document.getElementById('slot-hora-a').textContent = formatTime(18, 30, tz.offset) + ' – ' + formatTime(20, 30, tz.offset);
-        document.getElementById('slot-hora-b').textContent = formatTime(19, 0, tz.offset) + ' – ' + formatTime(21, 0, tz.offset);
-      }
-    </script>
-    <p class="cb-cta-sub">¿Dudas? <a href="https://wa.me/51959545350?text=Hola%2C%20tengo%20una%20consulta%20sobre%20el%20curso%20de%20C2M2%20de%20CISObeat" target="_blank" style="color:#25D366;font-weight:600;">Escríbenos por WhatsApp</a></p>
+ <div class="cb-container">
+  <span class="cb-phase">Inscripción</span>
+  <h2 class="cb-h2">Tu próxima evaluación comienza aquí</h2>
+  <p class="cb-p">30 cupos · un único grupo · inicio martes 17 de noviembre de 2026.</p>
+  <div class="cb-price-label">Precio de lanzamiento</div>
+  <div class="cb-price"><sup>$</sup>219 <span style="font-size:20px;color:#7A8599;font-weight:400;">USD</span></div>
+  <div class="cb-price-note">Precio regular: $247 USD · Egresados CISObeat Academy: $180 USD</div>
+  <p class="cb-p">Perú (Yape): S/800 precio regular · S/700 lanzamiento · S/600 egresados CISObeat Academy.</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:22px auto;">
+   <a class="cb-btn" href="https://pay.hotmart.com/N107126655P?off=y37r4n8r" target="_blank" rel="noopener noreferrer">Inscribirme · Lanzamiento US$219 →</a>
+   <a class="cb-btn" href="https://pay.hotmart.com/N107126655P?off=b5gvv648" target="_blank" rel="noopener noreferrer" style="background:transparent;border:1px solid #F5620F;">Precio regular · US$247 →</a>
+   <a class="cb-btn" href="https://wa.me/51959545350?text=Dese%20precio%20de%20descuento%20para%20egresado%3A%20curso%20(ingresar%20nombre%20de%20curso)%20edici%C3%B3n%3A%20(ingresar%20el%20mes%20en%20que%20tom%C3%B3%20el%20curso)" target="_blank" rel="noopener noreferrer" style="background:transparent;border:1px solid #25D366;">Soy egresado · Solicitar US$180 →</a>
   </div>
+  <p class="cb-p" style="font-size:14px;">El descuento para egresados se solicita por WhatsApp indicando el curso y el mes en que lo llevaste. Para pagar por Yape, consúltanos por WhatsApp.</p>
+  <a href="https://wa.me/51959545350?text=Hola%2C%20deseo%20informaci%C3%B3n%20para%20pagar%20por%20Yape%20el%20programa%20Evaluador%20de%20Madurez%20en%20Ciberseguridad%20OT%20con%20C2M2%20V2.1%2C%20edici%C3%B3n%20noviembre%202026." target="_blank" rel="noopener noreferrer" style="color:#25D366;font-weight:600;">Consultar pago por Yape →</a>
+ </div>
 </div>
 <div class="cb-signal"><svg viewBox="0 0 680 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,16 100,16 115,4 130,28 145,4 160,28 175,16 680,16" fill="none" stroke="#F5620F" stroke-width="1.5" opacity="0.4"/></svg></div>
 <!-- FAQ -->
@@ -493,7 +380,7 @@
     </details>
     <details class="cb-faq">
       <summary>¿Qué pasa si no cumplo el 100% de asistencia?</summary>
-      <div class="cb-faq-body">Recibes igual el Certificado de Participación. El Certificado de Finalización y la Insignia Digital Nivel 2 requieren la asistencia completa a las 4 sesiones en vivo.</div>
+      <div class="cb-faq-body">El Certificado de Participación y el Certificado de Finalización con Insignia Digital Nivel 2 tienen requisitos distintos. Si no alcanzas la asistencia requerida, consulta en el aula virtual las condiciones de regularización mediante trabajo práctico.</div>
     </details>
     <details class="cb-faq">
       <summary>¿Puedo usar el caso de mi propia empresa en la práctica?</summary>
