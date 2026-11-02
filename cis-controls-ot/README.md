@@ -35,3 +35,7 @@ Formación independiente. No es una certificación oficial CIS ni una evaluació
 ## Solicitud de descuento de egresados
 
 El botón de egresados abre WhatsApp al +51 959 545 350 con un mensaje prellenado para indicar curso y mes de participación. La página no ofrece un enlace directo de pago para egresados. Las tarifas regular y de lanzamiento conservan sus enlaces de Hotmart.
+
+## Pago con Yape para Perú
+
+La página ofrece solicitar por WhatsApp al +51 959 545 350 un precio especial por pagar con Yape. Mensaje: «Quiero aprovechar el precio especial YAPE para el curso Evaluación CIS Controls». No se publica un importe ni porcentaje de descuento sin confirmación. Regular: https://pay.hotmart.com/F108116109U?off=ozh46xyb . Lanzamiento: https://pay.hotmart.com/F108116109U?off=u1ju7tvv .
