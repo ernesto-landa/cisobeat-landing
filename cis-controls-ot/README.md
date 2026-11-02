@@ -31,3 +31,7 @@ Se mantienen 18 controles panorámicos, 12 salvaguardas candidatas, 18 evidencia
 Precios USD: regular 180, lanzamiento 147 y egresados 120; impuestos adicionales en checkout. Lanzamiento para los primeros 10 cupos o hasta el 15 de noviembre de 2026, lo que ocurra primero; control manual.
 
 Formación independiente. No es una certificación oficial CIS ni una evaluación normativa ICS exhaustiva.
+
+## Solicitud de descuento de egresados
+
+El botón de egresados abre WhatsApp al +51 959 545 350 con un mensaje prellenado para indicar curso y mes de participación. La página no ofrece un enlace directo de pago para egresados. Las tarifas regular y de lanzamiento conservan sus enlaces de Hotmart.
