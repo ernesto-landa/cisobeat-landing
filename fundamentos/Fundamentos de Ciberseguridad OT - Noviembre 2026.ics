@@ -1,0 +1,211 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 16.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:SA Pacific Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T000000
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0500
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN=ernesto.landa@hotmail.com;RSVP=TRUE:mailto:ernesto.landa@hotmai
+	l.com
+CLASS:PUBLIC
+CREATED:20261117T072024Z
+DESCRIPTION:🎓 Fundamentos de Ciberseguridad OT | CISObeat Academy\n¡B
+	ienvenidos a nuestras clases en vivo!\nEste enlace de Microsoft Teams ser
+	á utilizado para las sesiones del Módulo 2 – Clases en Vivo (8 horas).
+	\nDurante las sesiones reforzaremos los conocimientos adquiridos en las cl
+	ases grabadas\, analizaremos casos prácticos y resolveremos dudas sobre c
+	iberseguridad en entornos industriales.\n📌 Recomendaciones:\n\n*	\n	C
+	onectarse 5 minutos antes del inicio.\n*	\n	Mantener el micrófono apagado
+	 cuando no estén participando.\n*	\n	Utilizar el chat o levantar la mano 
+	para realizar preguntas.\n\n¡Nos vemos en clase!\nErnesto Landa\nCISObeat
+	 Academy\n\n\n____________________________________________________________
+	____________________\nReunión de Microsoft Teams \nUnirse: https://teams.
+	microsoft.com/meet/2818933083787661?p=xgCwFPcWTis1QzeW3D <https://na01.saf
+	elinks.protection.outlook.com/ap/t-59584e83/?url=https%3A%2F%2Fteams.micro
+	soft.com%2Fmeet%2F2818933083787661%3Fp%3DxgCwFPcWTis1QzeW3D&data=05%7C02%7
+	C%7C19aa7012837046e4cfa508df4478c883%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C
+	1%7C0%7C639304957690622145%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWU
+	sIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%
+	7C%7C%7C&sdata=syOZBP7%2Fg8pGLACNfJFNW%2BQ1R9JMYr5%2Bd3Ay9fkkxdY%3D&reserv
+	ed=0>  \nId. de reunión: 281 893 308 378 766 1 \nCódigo de acceso: ve77Y
+	S2R \n________________________________\n\n¿Necesita ayuda? <https://na01.
+	safelinks.protection.outlook.com/?url=https%3A%2F%2Faka.ms%2FJoinTeamsMeet
+	ing%3Fomkt%3Des-ES&data=05%7C02%7C%7C19aa7012837046e4cfa508df4478c883%7C84
+	df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639304957690644147%7CUnknown%7CTW
+	FpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFO
+	IjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=aHxNxKTNZPxdb4uxdi1cbz8rvG
+	N8lpUQTMxisBr8RpA%3D&reserved=0>  | Referencia del sistema <https://na01.s
+	afelinks.protection.outlook.com/ap/t-59584e83/?url=https%3A%2F%2Fteams.mic
+	rosoft.com%2Fl%2Fmeetup-join%2F19%253ameeting_NmFkMDg3ZTUtMjVjZC00NDkwLWJi
+	NmUtYWNkMTNjYWFhOTYw%2540thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a
+	%25223597e82c-2408-4ae2-92e2-59d1918293ed%2522%252c%2522Oid%2522%253a%2522
+	067829d4-19c9-4271-86af-8347ea77acff%2522%257d&data=05%7C02%7C%7C19aa70128
+	37046e4cfa508df4478c883%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C63930
+	4957690657556%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAu
+	MDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdat
+	a=2lMrWoACaEKfnDX53ahfLwbs7lHvWTjVEwd4z8lPT3M%3D&reserved=0>  \nPara organ
+	izadores: Opciones de la reunión <https://na01.safelinks.protection.outlo
+	ok.com/?url=https%3A%2F%2Fteams.microsoft.com%2FmeetingOptions%2F%3Forgani
+	zerId%3D067829d4-19c9-4271-86af-8347ea77acff%26tenantId%3D3597e82c-2408-4a
+	e2-92e2-59d1918293ed%26threadId%3D19_meeting_NmFkMDg3ZTUtMjVjZC00NDkwLWJiN
+	mUtYWNkMTNjYWFhOTYw%40thread.v2%26messageId%3D0%26language%3Des-ES&data=05
+	%7C02%7C%7C19aa7012837046e4cfa508df4478c883%7C84df9e7fe9f640afb435aaaaaaaa
+	aaaa%7C1%7C0%7C639304957690668829%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGki
+	OnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%
+	3D%7C0%7C%7C%7C&sdata=XJYTDaDKfuh14HAHjDRiG2fNhVv3TSGO99AU%2FU%2F8QlI%3D&r
+	eserved=0>  \n____________________________________________________________
+	____________________\n
+DTEND;TZID="SA Pacific Standard Time":20261117T223000
+DTSTAMP:20261117T070240Z
+DTSTART;TZID="SA Pacific Standard Time":20261117T203000
+LAST-MODIFIED:20261117T072024Z
+LOCATION:Reunión de Microsoft Teams
+ORGANIZER;CN="Aula Virtual | CISObeat Academy":mailto:aula.virtual@cisobeat
+	.org
+PRIORITY:5
+RRULE:FREQ=WEEKLY;COUNT=4;BYDAY=TU,TH
+SEQUENCE:1
+SUMMARY:Fundamentos de Ciberseguridad OT - Noviembre 2026
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E0080000000070E867A16176DD01000000000000000
+	0100000008DF0F02207D16246A9CE00501A943549
+X-ALT-DESC;FMTTYPE=text/html:<html><head>\n</head>\n<body>\n<div class="ele
+	mentToProof" style="margin-top: 1em\; margin-bottom: 1em\; font-family: Ap
+	tos\, Aptos_EmbeddedFont\, Aptos_MSFontService\, Calibri\, Helvetica\, san
+	s-serif\; font-size: 12pt\; color: rgb(0\, 0\, 0)\;">\n🎓 <b>Fundament
+	os de Ciberseguridad OT | CISObeat Academy</b></div>\n<div class="elementT
+	oProof" style="margin-top: 1em\; margin-bottom: 1em\; font-family: Aptos\,
+	 Aptos_EmbeddedFont\, Aptos_MSFontService\, Calibri\, Helvetica\, sans-ser
+	if\; font-size: 12pt\; color: rgb(0\, 0\, 0)\;">\n¡Bienvenidos a nuestras
+	 clases en vivo!</div>\n<div class="elementToProof" style="margin-top: 1em
+	\; margin-bottom: 1em\; font-family: Aptos\, Aptos_EmbeddedFont\, Aptos_MS
+	FontService\, Calibri\, Helvetica\, sans-serif\; font-size: 12pt\; color: 
+	rgb(0\, 0\, 0)\;">\nEste enlace de Microsoft Teams será utilizado para la
+	s sesiones del <b>Módulo 2 – Clases en Vivo (8 horas)</b>.</div>\n<div 
+	class="elementToProof" style="margin-top: 1em\; margin-bottom: 1em\; font-
+	family: Aptos\, Aptos_EmbeddedFont\, Aptos_MSFontService\, Calibri\, Helve
+	tica\, sans-serif\; font-size: 12pt\; color: rgb(0\, 0\, 0)\;">\nDurante l
+	as sesiones reforzaremos los conocimientos adquiridos en las clases grabad
+	as\, analizaremos casos prácticos y resolveremos dudas sobre cibersegurid
+	ad en entornos industriales.</div>\n<div class="elementToProof" style="mar
+	gin-top: 1em\; margin-bottom: 1em\; font-family: Aptos\, Aptos_EmbeddedFon
+	t\, Aptos_MSFontService\, Calibri\, Helvetica\, sans-serif\; font-size: 12
+	pt\; color: rgb(0\, 0\, 0)\;">\n📌 <b>Recomendaciones:</b></div>\n<ul 
+	data-spread="false">\n<li style="font-family: Aptos\, Aptos_EmbeddedFont\,
+	 Aptos_MSFontService\, Calibri\, Helvetica\, sans-serif\; font-size: 12pt\
+	; color: rgb(0\, 0\, 0)\;">\n<div class="elementToProof" role="presentatio
+	n" style="margin-top: 1em\; margin-bottom: 1em\;">\nConectarse 5 minutos a
+	ntes del inicio.</div>\n</li><li style="font-family: Aptos\, Aptos_Embedde
+	dFont\, Aptos_MSFontService\, Calibri\, Helvetica\, sans-serif\; font-size
+	: 12pt\; color: rgb(0\, 0\, 0)\;">\n<div class="elementToProof" role="pres
+	entation" style="margin-top: 1em\; margin-bottom: 1em\;">\nMantener el mic
+	rófono apagado cuando no estén participando.</div>\n</li><li style="font
+	-family: Aptos\, Aptos_EmbeddedFont\, Aptos_MSFontService\, Calibri\, Helv
+	etica\, sans-serif\; font-size: 12pt\; color: rgb(0\, 0\, 0)\;">\n<div cla
+	ss="elementToProof" role="presentation" style="margin-top: 1em\; margin-bo
+	ttom: 1em\;">\nUtilizar el chat o levantar la mano para realizar preguntas
+	.</div>\n</li></ul>\n<div class="elementToProof" style="margin-top: 1em\; 
+	margin-bottom: 1em\; font-family: Aptos\, Aptos_EmbeddedFont\, Aptos_MSFon
+	tService\, Calibri\, Helvetica\, sans-serif\; font-size: 12pt\; color: rgb
+	(0\, 0\, 0)\;">\n¡Nos vemos en clase!</div>\n<div class="elementToProof" 
+	style="margin-top: 1em\; margin-bottom: 1em\; font-family: Aptos\, Aptos_E
+	mbeddedFont\, Aptos_MSFontService\, Calibri\, Helvetica\, sans-serif\; fon
+	t-size: 12pt\; color: rgb(0\, 0\, 0)\;">\n<b>Ernesto Landa</b><br>\nCISObe
+	at Academy</div>\n<div style="font-family: Aptos\, Aptos_EmbeddedFont\, Ap
+	tos_MSFontService\, Calibri\, Helvetica\, sans-serif\; font-size: 12pt\; c
+	olor: rgb(0\, 0\, 0)\;">\n<br>\n</div>\n<br>\n<div style="max-width: 1024p
+	x\; color: #242424\; font-family:'Segoe UI'\,'Helvetica Neue'\,Helvetica\,
+	Arial\,sans-serif" class="me-email-text" lang="es-ES">\n<div style="margin
+	-bottom:24px\;overflow:hidden\;white-space:nowrap\;" aria-hidden="true">\n
+	__________________________________________________________________________
+	______</div>\n<div style="margin-bottom: 12px\;"><span class="me-email-tex
+	t" style="font-size: 20px\; color: #242424\; font-weight: 600">Reunión de
+	 Microsoft&nbsp\;Teams</span>\n</div>\n<div style="margin-bottom: 6px\; ov
+	erflow-wrap: break-word\;"><span class="me-email-text" style="font-size: 2
+	0px\; color: #242424\; font-weight: 600">Unirse:\n</span><a id="meet_invit
+	e_block.action.join_link" title="Meeting join" aria-label="Meeting join" c
+	lass="me-email-link" style="font-size: 20px\; text-decoration: underline\;
+	 color: #5B5FC7\;" href="https://na01.safelinks.protection.outlook.com/ap/
+	t-59584e83/?url=https%3A%2F%2Fteams.microsoft.com%2Fmeet%2F281893308378766
+	1%3Fp%3DxgCwFPcWTis1QzeW3D&amp\;data=05%7C02%7C%7C19aa7012837046e4cfa508df
+	4478c883%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639304957690622145%7
+	CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJ
+	XaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp\;sdata=syOZBP7%
+	2Fg8pGLACNfJFNW%2BQ1R9JMYr5%2Bd3Ay9fkkxdY%3D&amp\;reserved=0" originalsrc=
+	"https://teams.microsoft.com/meet/2818933083787661?p=xgCwFPcWTis1QzeW3D">h
+	ttps://teams.microsoft.com/meet/2818933083787661?p=xgCwFPcWTis1QzeW3D</a>\
+	n</div>\n<div style="margin-bottom: 6px\;"><span class="me-email-text-seco
+	ndary" style="font-size: 14px\; color: #616161\;">Id. de reunión:\n</span
+	><span class="me-email-text" style="font-size: 14px\; color: #242424\;">28
+	1 893 308 378 766 1</span>\n</div>\n<div style="margin-bottom: 32px\;"><sp
+	an class="me-email-text-secondary" style="font-size: 14px\; color: #616161
+	\;">Código de acceso:\n</span><span class="me-email-text" style="font-siz
+	e: 14px\; color: #242424\;">ve77YS2R</span>\n</div>\n<div style="margin-bo
+	ttom: 12px\; max-width: 1024px\;">\n<hr style="border: 0\; background: #61
+	6161\; height: 1px\;">\n</div>\n<div style="margin-bottom: 24px\;"><a id="
+	meet_invite_block.action.help" class="me-email-link" style="font-size:14px
+	\; text-decoration:underline\; color: #5B5FC7\;" href="https://na01.safeli
+	nks.protection.outlook.com/?url=https%3A%2F%2Faka.ms%2FJoinTeamsMeeting%3F
+	omkt%3Des-ES&amp\;data=05%7C02%7C%7C19aa7012837046e4cfa508df4478c883%7C84d
+	f9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C639304957690644147%7CUnknown%7CTWF
+	pbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOI
+	joiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp\;sdata=aHxNxKTNZPxdb4uxdi1cbz
+	8rvGN8lpUQTMxisBr8RpA%3D&amp\;reserved=0" originalsrc="https://aka.ms/Join
+	TeamsMeeting?omkt=es-ES">¿Necesita ayuda?</a>\n<span style="color: #61616
+	1">|</span> <a id="meet_invite_block.action.join_link_compatibility" href=
+	"https://na01.safelinks.protection.outlook.com/ap/t-59584e83/?url=https%3A
+	%2F%2Fteams.microsoft.com%2Fl%2Fmeetup-join%2F19%253ameeting_NmFkMDg3ZTUtM
+	jVjZC00NDkwLWJiNmUtYWNkMTNjYWFhOTYw%2540thread.v2%2F0%3Fcontext%3D%257b%25
+	22Tid%2522%253a%25223597e82c-2408-4ae2-92e2-59d1918293ed%2522%252c%2522Oid
+	%2522%253a%2522067829d4-19c9-4271-86af-8347ea77acff%2522%257d&amp\;data=05
+	%7C02%7C%7C19aa7012837046e4cfa508df4478c883%7C84df9e7fe9f640afb435aaaaaaaa
+	aaaa%7C1%7C0%7C639304957690657556%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGki
+	OnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%
+	3D%7C0%7C%7C%7C&amp\;sdata=2lMrWoACaEKfnDX53ahfLwbs7lHvWTjVEwd4z8lPT3M%3D&
+	amp\;reserved=0" originalsrc="https://teams.microsoft.com/l/meetup-join/19
+	%3ameeting_NmFkMDg3ZTUtMjVjZC00NDkwLWJiNmUtYWNkMTNjYWFhOTYw%40thread.v2/0?
+	context=%7b%22Tid%22%3a%223597e82c-2408-4ae2-92e2-59d1918293ed%22%2c%22Oid
+	%22%3a%22067829d4-19c9-4271-86af-8347ea77acff%22%7d" class="me-email-link"
+	 style="font-size:14px\; text-decoration:underline\; color: #5B5FC7\;">\nR
+	eferencia del sistema</a> </div>\n<div><span class="me-email-text-secondar
+	y" style="font-size: 14px\; color: #616161\;">Para organizadores:\n</span>
+	<a id="meet_invite_block.action.organizer_meet_options" class="me-email-li
+	nk" style="font-size: 14px\; text-decoration: underline\; color: #5B5FC7\;
+	" target="_blank" href="https://na01.safelinks.protection.outlook.com/?url
+	=https%3A%2F%2Fteams.microsoft.com%2FmeetingOptions%2F%3ForganizerId%3D067
+	829d4-19c9-4271-86af-8347ea77acff%26tenantId%3D3597e82c-2408-4ae2-92e2-59d
+	1918293ed%26threadId%3D19_meeting_NmFkMDg3ZTUtMjVjZC00NDkwLWJiNmUtYWNkMTNj
+	YWFhOTYw%40thread.v2%26messageId%3D0%26language%3Des-ES&amp\;data=05%7C02%
+	7C%7C19aa7012837046e4cfa508df4478c883%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7
+	C1%7C0%7C639304957690668829%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydW
+	UsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0
+	%7C%7C%7C&amp\;sdata=XJYTDaDKfuh14HAHjDRiG2fNhVv3TSGO99AU%2FU%2F8QlI%3D&am
+	p\;reserved=0" originalsrc="https://teams.microsoft.com/meetingOptions/?or
+	ganizerId=067829d4-19c9-4271-86af-8347ea77acff&amp\;tenantId=3597e82c-2408
+	-4ae2-92e2-59d1918293ed&amp\;threadId=19_meeting_NmFkMDg3ZTUtMjVjZC00NDkwL
+	WJiNmUtYWNkMTNjYWFhOTYw@thread.v2&amp\;messageId=0&amp\;language=es-ES" re
+	l="noreferrer noopener">Opciones\n de la reunión</a> </div>\n<div style="
+	margin-top: 24px\; margin-bottom: 6px\;"></div>\n<div style="margin-bottom
+	: 24px\;"></div>\n<div style="margin-bottom:24px\;overflow:hidden\;white-s
+	pace:nowrap\;" aria-hidden="true">\n______________________________________
+	__________________________________________</div>\n</div>\n</body>\n</html>
+	\n
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-APPTLASTSEQUENCE:1
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
