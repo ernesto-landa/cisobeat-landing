@@ -6,14 +6,14 @@ Página: https://cisobeat.org/cis-controls-ot/
 
 ## Calendario
 
-| Clase | Fecha | Horario de Perú UTC−5 |
+| Clase | Fecha | Horario de Ciudad de México UTC−6 |
 |---|---|---|
-| 1 | Jueves 10 de diciembre de 2026 | 20:30–22:30 |
-| 2 | Martes 15 de diciembre de 2026 | 20:30–22:30 |
-| 3 | Jueves 17 de diciembre de 2026 | 20:30–22:30 |
-| 4 | Martes 22 de diciembre de 2026 | 20:30–22:30 |
-| 5 | Martes 29 de diciembre de 2026 | 20:30–22:30 |
-| 6 | Martes 5 de enero de 2027 | 20:30–22:30 |
+| 1 | Jueves 10 de diciembre de 2026 | 19:30–21:30 |
+| 2 | Martes 15 de diciembre de 2026 | 19:30–21:30 |
+| 3 | Jueves 17 de diciembre de 2026 | 19:30–21:30 |
+| 4 | Martes 22 de diciembre de 2026 | 19:30–21:30 |
+| 5 | Martes 29 de diciembre de 2026 | 19:30–21:30 |
+| 6 | Martes 5 de enero de 2027 | 19:30–21:30 |
 
 Seis clases de dos horas: **12 horas en vivo +8 autónomas =20 horas de dedicación**. Sin clases el 8, 24 ni 31 de diciembre. La última clase será el 5 de enero de 2027.
 
